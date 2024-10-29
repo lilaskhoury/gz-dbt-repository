@@ -19,13 +19,10 @@ sources:
           - name: revenue
             description: "Revenue generated from the sale of each product within the order."
           - name: quantity
-            description: "Number of units sold for each product in the order." 
+            description: "Number of units sold for each product in the order."       
         tests:
           - unique:
-              column_name: 
-                - products_id
-                - orders_id  
-                   
+              column_name: "(orders_id || '-' || products_id)"
       - name: product 
         identifier: raw_gz_product 
         description: product of Greenweez / 
