@@ -14,7 +14,7 @@ sources:
             description: "Date of purchase for the specific product in the order."
           - name: orders_id
             description: "Unique identifier for each order, representing a transaction in the sales data."
-          - name: product_id
+          - name: products_id
             description: "Unique identifier for each product sold in the order."
           - name: revenue
             description: "Revenue generated from the sale of each product within the order."
@@ -23,14 +23,14 @@ sources:
         tests:
           - unique:
               column_name: 
-                - product_id
+                - products_id
                 - orders_id  
                    
-      - name: product 
+      - name: products 
         identifier: raw_gz_product 
         description: product of Greenweez / 
         columns:
-          - name: product_id
+          - name: products_id
             description: "Unique identifier for each product." 
             tests:
               - unique
