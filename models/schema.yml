@@ -26,7 +26,7 @@ sources:
                 - products_id
                 - orders_id  
                    
-      - name: products 
+      - name: product 
         identifier: raw_gz_product 
         description: product of Greenweez / 
         columns:
