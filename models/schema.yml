@@ -2,9 +2,54 @@
 version: 2
 
 sources:
-  - name: gz_raw_data  # Your source name for dbt
+  - name: raw
+    schema: gz_raw_data
     tables:
-      - name: raw_gz_sales        
-      - name: raw_gz_product 
-      - name: raw_gz_ship
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Contains sales data for Greenweez. Each row represents a unique product sold in a specific order."
+        loaded_at_field: "date_date"  # Replace with your actual timestamp column   
+        columns:
+          - name: date_date
+            description: "Date of purchase for the specific product in the order."
+          - name: orders_id
+            description: "Unique identifier for each order, representing a transaction in the sales data."
+          - name: pdt_id
+            description: "Unique identifier for each product sold in the order."
+          - name: revenue
+            description: "Revenue generated from the sale of each product within the order."
+          - name: quantity
+            description: "Number of units sold for each product in the order." 
+        tests:
+          - unique:
+              column_name: 
+                - pdt_id
+                - orders_id  
+                   
+      - name: product 
+        identifier: raw_gz_product 
+        description: product of Greenweez / 
+        columns:
+          - name: pdt_id
+            description: "Unique identifier for each product." 
+            tests:
+              - unique
+              - not_null
+          - name: purchase_price
+            description: "price per pdt_id"       
+      - name: ship
+        identifier: raw_gz_ship
+        description: ship of Greenweez
+        columns:
+          - name: orders_id
+            description: "Unique identifier matching each order in the sales data for shipping tracking."
+            tests:
+              - unique
+              - not_null
+          - name: shipping_fee
+            description: "Shipping fee applied to the order at the time of purchase."
+          - name: logCost 
+            description: "log cost per orders_id"
+          - name: ship_cost
+            description: "ship cost per orders_id"
         
