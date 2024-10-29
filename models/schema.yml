@@ -1,0 +1,13 @@
+# schema.yml
+version: 2
+
+sources:
+  - name: gz_raw_data  # Your source name for dbt
+    schema: raw  # Aliased schema name (dataset name)
+    tables:
+      - name: gz_sales
+        identifier: sales  # Alias table as "sales"
+      - name: gz_product
+        identifier: product  # Alias table as "product"
+      - name: gz_ship
+        identifier: ship  # Alias table as "ship"
