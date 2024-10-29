@@ -7,8 +7,7 @@ sources:
     tables:
       - name: sales
         identifier: raw_gz_sales
-        description: "Contains sales data for Greenweez. Each row represents a unique product sold in a specific order."
-        loaded_at_field: "date_date"  # Replace with your actual timestamp column   
+        description: "Contains sales data for Greenweez. Each row represents a unique product sold in a specific order."   
         columns:
           - name: date_date
             description: "Date of purchase for the specific product in the order."
@@ -22,7 +21,7 @@ sources:
             description: "Number of units sold for each product in the order."       
         tests:
           - unique:
-              column_name: "(orders_id || '-' || products_id)"
+              column_name: "(orders_id || '-' || pdt_id)"
       - name: product 
         identifier: raw_gz_product 
         description: product of Greenweez / 
