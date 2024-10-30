@@ -48,4 +48,94 @@ sources:
             description: "log cost per orders_id"
           - name: ship_cost
             description: "ship cost per orders_id"
-        
+      - name: adwords
+        identifier : raw_gz_adwords
+        description : ceci est une analyse des adwords
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+        columns :
+         - name : date_date
+           description : ceci est la date
+         - name : paid_source
+           description : ceci est la paid_source
+         - name : campaign_key
+           description : ceci est la campaign key
+         - name : camPGN_name
+           description : ceci est le campaign_name avec une typo
+         - name : ads_cost
+           description : ceci est le adscost
+         - name : impression
+           description : ceci est l'impression
+         - name : click
+           description : lorem impsum
+
+      - name: bing
+        identifier : raw_gz_bing
+        description : ceci est une analyse des bing
+        tests:
+          - unique:
+              column_name: "(date_date|| '-' || campaign_key)"
+        columns :
+         - name : date_date
+           description : ceci est la date
+         - name : paid_source
+           description : ceci est la paid_source
+         - name : campaign_key
+           description : ceci est la campaign key
+         - name : camPGN_name
+           description : ceci est le campaign_name avec une typo
+         - name : ads_cost
+           description : ceci est le adscost
+         - name : impression
+           description : ceci est l'impression
+         - name : click
+           description : lorem impsum
+
+      - name: criteo
+        identifier : raw_gz_criteo
+        description : ceci est une analyse des criteo
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+        columns :
+         - name : date_date
+           description : ceci est la date
+         - name : paid_source
+           description : ceci est la paid_source
+         - name : campaign_key
+           description : ceci est la campaign key
+         - name : camPGN_name
+           description : ceci est le campaign_name avec une typo
+         - name : ads_cost
+           description : ceci est le adscost
+         - name : impression
+           description : ceci est l'impression
+         - name : click
+           description : lorem impsum
+
+      - name: facebook
+        identifier : raw_gz_facebook
+        description : ceci est une analyse des facebook
+        tests:
+          - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+        columns :
+         - name : date_date
+           description : ceci est la date
+         - name : paid_source
+           description : ceci est la paid_source
+         - name : campaign_key
+           description : ceci est la campaign key
+         - name : camPGN_name
+           description : ceci est le campaign_name avec une typo
+         - name : ads_cost
+           description : ceci est le adscost
+         - name : impression
+           description : ceci est l'impression
+         - name : click
+           description : lorem impsum
+
+          
+            
+      
